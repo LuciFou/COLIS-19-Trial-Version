@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
+.sidebar-menu {
+    position: fixed;
+    top: 20%;
+    right: 0%;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    z-index: 99999999;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px;
+    font-size: 22px;
+    margin: 2px;
+    text-align: left;
+    font-family: 'Oswald', sans-serif;
+    border-radius: 50px 0px 0px 50px;
+    transform: translate(130px, 0px);
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.sidebar-menu a:hover {
+    transform: translate(0px, 0px);
+}
+
+.sidebar-menu a i {
+    margin-right: 25px;
+    background-color: #fff;
+    height: 40px;
+    width: 40px;
+    color: #000;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+}
+
+.sidebar-menu a i.fa-facebook-f {
+    color: #4267B2;
+}
+
+
+.sidebar-menu a i.fa-twitter {
+    color: #1DA1F2;
+}
+
+.sidebar-menu a i.fa-instagram {
+    color: #8a3ab9;
+}
+
+.sidebar-menu a i.fa-linkedin-in {
+    color: #0077b5;
+}
+
+.sidebar-menu a i.fa-github {
+    color: #000;
+}
+
+.sidebar-menu a i.fa-youtube {
+    color: #FF0000;
+}
+
+.sidebar-menu a i.fa-star-half-alt {
+    color: #FF9529;
+}
+
+.facebookk {
+    color: #fff;
+    background-color: #1c2237;
+}
+
+.twitterr {
+    color: #fff;
+    background-color: #1c2237;
+}
+
+.instagramm {
+    color: #fff;
+    background-color: #1c2237;
+}
+
+.linkedinn {
+    color: #fff;
+    background-color: #1c2237;
+}
+
+.rating {
+    color: #fff;
+    background-color: #1c2237;
+}
+
+.githubb {
+    color: #fff;
+    background-color: #1c2237;
+}
+
+.youtubee {
+    color: #fff;
+    background-color: #1c2237;
+}
+
+.fb::before {
+    background-image: linear-gradient(135deg, #fff 40%, #fff 50%);
+}
+
+.ig::before {
+    background-image: linear-gradient(135deg, #fff 40%, #fff 50%);
+}
+
+.yt::before {
+    background-image: linear-gradient(135deg, #fff 40%, #fff 50%);
+}
+
+.twt::before {
+    background-image: linear-gradient(135deg, #fff 40%, #fff 50%);
+}
+
+.lkin::before {
+    background-image: linear-gradient(135deg, #fff 40%, #fff 50%);
+}
+
+@media screen and (max-width: 960px) {
+    .sidebar-menu a {
+        transform: translate(140px, 0px);
+    }
+    .sidebar-menu a:hover {
+        transform: translate(120px, 0px);
+    }
+}
