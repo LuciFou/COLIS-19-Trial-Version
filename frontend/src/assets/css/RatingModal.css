@@ -1,0 +1,84 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: .5;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 13%;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
+
+.modal {
+  z-index: 100;
+  background: #fff;
+  position: relative;
+  margin: 1.75rem auto;
+  border-radius: 3px;
+  max-width: 500px;
+  padding: 2rem;
+  height: 480px;
+}
+
+.modal-main {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.hover-rating {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.modal-main > h2 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-top: -50px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: #1c2237;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-close-button {
+  font-size: 30px;
+  padding: 2px 2px;
+  line-height: auto;
+  font-weight: 100;
+  color: #f0a672;
+  background-color: #fff;
+  opacity: 1;
+  cursor: pointer;
+  border: none;
+}
+
+.modal-close-button:hover {
+  color: #82171f;
+}
+
+@media screen and (max-width: 640px) {
+  .modal-wrapper {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

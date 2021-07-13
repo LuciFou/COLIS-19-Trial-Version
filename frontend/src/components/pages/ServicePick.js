@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../assets/css/ServicePick.css';
+import '../../assets/css/ServicePick.css';
 import { BiMailSend } from 'react-icons/bi';
 import { CgTrack } from 'react-icons/cg';
 import { IconContext } from 'react-icons/lib';

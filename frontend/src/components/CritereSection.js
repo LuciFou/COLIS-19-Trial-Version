@@ -1,7 +1,6 @@
-import { makeStyles } from '@material-ui/core';
 import React from 'react';
 import CritereCard from './CritereCard';
-import { Grid } from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({

@@ -7,13 +7,12 @@ import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import 'react-autocomplete-input/dist/bundle.css';
 import { Helmet } from 'react-helmet';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { CircularProgress, MenuItem } from '@material-ui/core';
+import { CircularProgress, makeStyles, MenuItem, withStyles } from '@material-ui/core';
 
 const CssTextField = withStyles({
   root: {

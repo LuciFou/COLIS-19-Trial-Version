@@ -5,15 +5,10 @@ import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
-import '../../assets/css/CarrierForm.css';
-import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router';
-import { postuler } from '../../actions/carriers';
-// import FileBase from 'react-file-base64';
+import '../assets/css/CarrierForm.css';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { CircularProgress } from '@material-ui/core';
+import { CircularProgress, makeStyles, withStyles } from '@material-ui/core';
 
 
 const CssTextField = withStyles({
@@ -89,11 +84,7 @@ const useStyles = makeStyles((theme) => ({
 export default function CarrierForm() {
 
     const classes = useStyles();
-
-    const dispatch = useDispatch();
     const [loader, setLoader] = useState(false);
-    const [file, setFile] = useState('');
-    const history = useHistory();
 
     const initState = {
         name: "",
@@ -109,24 +100,6 @@ export default function CarrierForm() {
         message: Yup.string().max(255).required('Addresse est obligatoire'),
     })
 
-    // const [carrier, setCarrier] = useState(initState);
-
-    // const handleSubmit = async (event) => {
-    //     event.preventDefault();
-    //     const formData = new FormData();
-    //     await setLoader(true);
-    //     await formData.append("file", file);
-    //     await formData.append("carrier", JSON.stringify(carrier));
-    //     await dispatch(postuler(formData, history));
-    //     await setLoader(false);
-    // };
-
-    // const handleChange = (e) => {
-    //     setCarrier({ ...carrier, [e.target.name]: e.target.value });
-    // };
-
-    console.log(file);
-
     return (
         <Grid container component="main" className={classes.root}>
             <CssBaseline />
@@ -139,13 +112,8 @@ export default function CarrierForm() {
                     <Formik
                         initialValues={initState}
                         validationSchema={validationSchema}
-                        onSubmit={async (values) => {
-                            // values.preventDefault();
-                            const formData = new FormData();
+                        onSubmit={async () => {
                             await setLoader(true);
-                            await formData.append("file", file);
-                            await formData.append("carrier", JSON.stringify(values));
-                            await dispatch(postuler(formData, history));
                             await setLoader(false);
                         }}
                     >
@@ -213,9 +181,7 @@ export default function CarrierForm() {
                                     fullWidth
                                     name="cv"
                                     type="file"
-                                    onChange={(e) => {
-                                        setFile(e.target.files[0]);
-                                    }}
+                                    onChange={handleChange}
                                     error={Boolean(touched.cv && errors.cv)}
                                     helperText={touched.cv && errors.cv}
                                     onBlur={handleBlur}

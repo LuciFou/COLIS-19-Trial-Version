@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
-import '../../assets/css/RatingModal.css'
+import '../assets/css/RatingModal.css'
 import FeedbackForm from './FeedbackForm';
 import { motion } from "framer-motion";
 

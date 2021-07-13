@@ -1,11 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
-import { useSelector } from 'react-redux';
 import Testimonial from './Testimonial';
-import { Typography } from '@material-ui/core';
+import { makeStyles, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -56,25 +54,19 @@ function Testimonials() {
         },
         {
             rating: 4.5,
-            message: "This is so amazing!!!",
-            name: "Fourat Abdellatif",
-            city: "Kelibia",
+            message: "Cool cool cool..",
+            name: "Monji Ben Tarek",
+            city: "Ariana",
         },
         {
             rating: 4.5,
-            message: "This is so amazing!!!",
-            name: "Fourat Abdellatif",
-            city: "Kelibia",
+            message: "Ce site m'a vraiment aidé!",
+            name: "Abdou Ben Salem",
+            city: "Monastir",
         },
     ];
-    const stats = useSelector((state) => state.stats);
 
-    if (stats)
-        feedbacks = stats[7];
-
-    console.log('feedbacks: ' + feedbacks)
-
-    return feedbacks?.length > 2 ? (
+    return (
         <section className={classes.root}>
             <Container className={classes.container}>
                 <Grid container xs={12}>
@@ -97,9 +89,7 @@ function Testimonials() {
                 </Grid>
             </Container>
         </section>
-    ) : (
-        null
-    );
+    )
 }
 
 export default Testimonials

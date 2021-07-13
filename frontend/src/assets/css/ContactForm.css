@@ -1,0 +1,25 @@
+h3 {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #1c2237;
+}
+
+h6 {
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(82, 80, 80);
+}
+
+.image {
+    background-image: url('../images/packages04.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@media screen and (max-width: 600px) {
+    .image {
+        background-image: none;
+    }
+}

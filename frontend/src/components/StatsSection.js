@@ -1,7 +1,5 @@
 import { Container, Grid, makeStyles } from '@material-ui/core'
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { getStats } from '../../../actions/stats';
+import React from 'react'
 import FeedbacksAvg from './FeedbacksAvg';
 import { MDBIcon } from 'mdbreact';
 
@@ -26,21 +24,7 @@ function StatsSection() {
 
     const classes = useStyles();
 
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(getStats());
-    }, [dispatch]);
-
-    const stats = useSelector((state) => state.stats);
-
-    let feedbacksCount = 0;
-
-    if (stats) {
-        feedbacksCount = Number.parseInt(stats[0]);
-    }
-
-    return feedbacksCount > 2 ? (
+    return (
         <Container>
             <Grid container xs={12}>
                 <Grid item xs={12} sm={4} md={4}>
@@ -58,8 +42,6 @@ function StatsSection() {
                 </Grid>
             </Grid>
         </Container>
-    ) : (
-        null
     )
 }
 

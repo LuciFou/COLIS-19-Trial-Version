@@ -5,12 +5,8 @@ import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
-import '../../assets/css/ContactForm.css';
-import '../../assets/css/HowItWorksSection.css';
-import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router';
-import { reclamer } from '../../actions/reclamations';
+import '../assets/css/ContactForm.css';
+import '../assets/css/HowItWorksSection.css';
 import Timeline from '@material-ui/lab/Timeline';
 import TimelineItem from '@material-ui/lab/TimelineItem';
 import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
@@ -23,7 +19,7 @@ import AssessmentIcon from '@material-ui/icons/Assessment';
 import CardGiftcardIcon from '@material-ui/icons/CardGiftcard';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { CircularProgress } from '@material-ui/core';
+import { CircularProgress, makeStyles, withStyles } from '@material-ui/core';
 // import { Divider, InputAdornment } from '@material-ui/core';
 
 const CssTextField = withStyles({
@@ -115,10 +111,7 @@ const useStyles = makeStyles((theme) => ({
 export default function ContactForm() {
 
     const classes = useStyles();
-
-    const dispatch = useDispatch();
     const [loader, setLoader] = useState(false);
-    const history = useHistory();
 
     const initState = {
         name: "",
@@ -230,9 +223,8 @@ export default function ContactForm() {
                     <Formik
                         initialValues={initState}
                         validationSchema={validationSchema}
-                        onSubmit={async (values) => {
+                        onSubmit={async () => {
                             await setLoader(true);
-                            await dispatch(reclamer(values, history));
                             await setLoader(false);
                         }}
                     >

@@ -1,0 +1,40 @@
+h3 {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #1c2237;
+}
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+    width: 5%;
+}
+
+.custom-file-input::before {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #fff;
+    content: 'Ajouter votre CV';
+    display: inline-block;
+    background: linear-gradient(to top, #1c2237, #1c2237);
+    border: 3px solid #1c2237;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    /* -webkit-user-select: none; */
+    cursor: pointer;
+    /* text-shadow: 1px 1px #fff; */
+    font-weight: 100;
+    font-size: 15px;
+    width: 55%;
+    background-color: #1c2237;
+    text-align: center;
+}
+
+.custom-file-input:hover::before {
+    border-color: #82171f;
+    background-color: #82171f;
+}
+
+.custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #82171f, #82171f);
+}

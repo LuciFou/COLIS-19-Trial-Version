@@ -2,7 +2,6 @@ import { Divider, Grid, LinearProgress, makeStyles, withStyles } from '@material
 import React from 'react';
 // import StarRateIcon from '@material-ui/icons/StarRate';
 import Rating from '@material-ui/lab/Rating';
-import { useSelector } from 'react-redux';
 
 
 const CssLinearProgress = withStyles({
@@ -66,27 +65,13 @@ function FeedbacksAvg() {
 
     const classes = useStyles();
 
-    let feedbacksCount = 0;
-    let oneStar = 0;
-    let twoStar = 0;
-    let threeStar = 0;
-    let fourStar = 0;
-    let fiveStar = 0;
-    let feedbAvg = 0;
-
-    const stats = useSelector((state) => state.stats);
-
-    if (stats) {
-        feedbacksCount = Number.parseInt(stats[0]);
-        oneStar = stats[1] * 100 / feedbacksCount;
-        twoStar = stats[2] * 100 / feedbacksCount;
-        threeStar = stats[3] * 100 / feedbacksCount;
-        fourStar = stats[4] * 100 / feedbacksCount;
-        fiveStar = stats[5] * 100 / feedbacksCount;
-        feedbAvg = stats && stats?.length ? Number.parseFloat(stats[6][0]?.feedbacksAvg).toFixed(1) : ''
-        console.log('average: ' + feedbAvg);
-    }
-
+    let feedbacksCount = 500;
+    let oneStar = 50;
+    let twoStar = 70;
+    let threeStar = 80;
+    let fourStar = 180;
+    let fiveStar = 120;
+    let feedbAvg = 3.5;
 
     return (
         <div>

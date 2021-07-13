@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, makeStyles, withStyles } from '@material-ui/core/';
+import { makeStyles, Typography, withStyles } from '@material-ui/core/';
 import Rating from '@material-ui/lab/Rating';
 import StarsIcon from '@material-ui/icons/Stars';
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../../App.css';
 import ServicePick from './ServicePick';
 import { Helmet } from "react-helmet";
 import { makeStyles, Typography } from '@material-ui/core';

@@ -6,7 +6,7 @@ import Services from './components/pages/Services';
 import SignUp from './components/pages/SignUp';
 import Footer from './components/Footer';
 import SignIn from './components/pages/SignIn';
-import { Box, Fab, makeStyles, } from '@material-ui/core';
+import { Box, Fab, makeStyles } from '@material-ui/core';
 // import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 // import NavigationIcon from '@material-ui/icons/Navigation';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';

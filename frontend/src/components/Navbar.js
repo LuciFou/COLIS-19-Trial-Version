@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import '../assets/css/Navbar.css';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
-import { fade, makeStyles, InputBase } from '@material-ui/core';
+import { fade, InputBase, makeStyles } from '@material-ui/core';
 import SignInButton from './SignInButton';
 import SearchIcon from '@material-ui/icons/Search';
 

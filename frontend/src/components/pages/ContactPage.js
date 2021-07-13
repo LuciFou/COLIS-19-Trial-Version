@@ -5,12 +5,11 @@ import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
 import '../../assets/css/ContactPage.css';
 import { Helmet } from 'react-helmet';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { CircularProgress } from '@material-ui/core';
+import { CircularProgress, makeStyles, withStyles } from '@material-ui/core';
 
 
 const CssTextField = withStyles({

@@ -1,8 +1,6 @@
 import { Box, Button, makeStyles, TextField, withStyles } from '@material-ui/core'
 import Rating from '@material-ui/lab/Rating';
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { evaluer } from '../../actions/feedbacks';
 
 const CssTextField = withStyles({
     root: {
@@ -67,32 +65,9 @@ function FeedbackForm() {
     const [value, setValue] = useState(0);
     const [hover, setHover] = useState(-1);
 
-    const [user] = useState(JSON.parse(localStorage.getItem("profile")));
-
-    const dispatch = useDispatch();
-
-    const initState = {
-        rating: "",
-        name: user.result.name,
-        email: user.result.email,
-        city: user.result.city,
-        message: "",
-    };
-
-    const [feedback, setFeedback] = useState(initState);
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        dispatch(evaluer(feedback));
-    };
-
-    const handleChange = (e) => {
-        setFeedback({ ...feedback, [e.target.name]: e.target.value });
-    };
-
     return (
         <div>
-            <form validate onSubmit={handleSubmit}>
+            <form validate>
                 <span className='hover-rating'>
                     <div className={classes.root}>
                         <Rating
@@ -101,7 +76,6 @@ function FeedbackForm() {
                             precision={0.5}
                             onChange={(event, newValue) => {
                                 setValue(newValue);
-                                setFeedback({ ...feedback, [event.target.name]: event.target.value })
                             }}
                             onChangeActive={(event, newHover) => {
                                 setHover(newHover);
@@ -119,8 +93,6 @@ function FeedbackForm() {
                     label="Nom & Prénom"
                     name="name"
                     autoComplete="name"
-                    defaultValue={user.result.name}
-                    onChange={handleChange}
                 />
                 <CssTextField
                     className={classes.margin}
@@ -131,8 +103,6 @@ function FeedbackForm() {
                     label="Ville"
                     name="city"
                     autoComplete="city"
-                    defaultValue={user.result.city}
-                    onChange={handleChange}
                 />
                 <CssTextField
                     className={classes.margin}
@@ -147,7 +117,6 @@ function FeedbackForm() {
                     autoComplete="message"
                     multiline
                     rows='3'
-                    onChange={handleChange}
                 />
                 <CssButton
                     type="submit"
